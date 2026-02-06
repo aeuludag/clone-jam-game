@@ -5,7 +5,6 @@ public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
 
-    // Event ismini ve argümanlarýný deðiþtirdik
     public event EventHandler<OnSelectedObjectChangedEventArgs> OnSelectedObjectChanged;
     public class OnSelectedObjectChangedEventArgs : EventArgs
     {
@@ -14,19 +13,21 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private GameInput gameInput;
-    [SerializeField] private LayerMask interactableLayerMask; // Ýsim güncellendi
-    [SerializeField] private LayerMask collisionsLayerMask;
+
+    // REMOVED: LayerMasks are removed since you are using Default for everything
+    // [SerializeField] private LayerMask interactableLayerMask; 
+    // [SerializeField] private LayerMask collisionsLayerMask;
 
 
     private bool isWalking;
     private Vector3 interactDir;
-    private InteractableObject selectedObject; // Deðiþken tipi güncellendi
+    private InteractableObject selectedObject;
 
     private void Awake()
     {
         if (Instance != null)
         {
-            Debug.LogError("Birden fazla Player instance'ý var!");
+            Debug.LogError("There is more than one Player instance!");
         }
         Instance = this;
     }
@@ -38,7 +39,6 @@ public class Player : MonoBehaviour
 
     private void GameInput_OnInteractAction(object sender, System.EventArgs e)
     {
-        // Eðer seçili bir obje varsa onun Interact fonksiyonunu çalýþtýr
         if (selectedObject != null)
         {
             selectedObject.Interact();
@@ -59,8 +59,6 @@ public class Player : MonoBehaviour
     private void HandleInteractions()
     {
         Vector2 inputVector = gameInput.GetmovementVector();
-
-        // 2D yönlendirme
         Vector3 moveDirection = new Vector3(inputVector.x, inputVector.y, 0f);
 
         if (moveDirection != Vector3.zero)
@@ -70,11 +68,11 @@ public class Player : MonoBehaviour
 
         float interactDistance = 2f;
 
-        // 2D Raycast
-        RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, interactDir, interactDistance, interactableLayerMask);
+        // UPDATED: Removed layerMask parameter. It now checks everything on Default layer.
+        RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, interactDir, interactDistance);
+
         if (raycastHit.collider != null)
         {
-            // Çarptýðýmýz þeyde "InteractableObject" scripti var mý?
             if (raycastHit.transform.TryGetComponent(out InteractableObject interactableObject))
             {
                 if (interactableObject != selectedObject)
@@ -91,7 +89,6 @@ public class Player : MonoBehaviour
         {
             SetSelectedObject(null);
         }
-
     }
 
     private void HandleMovement()
@@ -102,11 +99,27 @@ public class Player : MonoBehaviour
         float moveDistance = moveSpeed * Time.deltaTime;
         float playerRadius = .5f;
 
-        // Çarpýþma kontrolü (2D)
-        bool canMove = !Physics2D.CircleCast(transform.position, playerRadius, moveDirection, moveDistance, collisionsLayerMask);
+        // UPDATED: Removed collisionsLayerMask. It detects everything.
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, playerRadius, moveDirection, moveDistance);
+
+        bool canMove = true;
+
+        if (hit.collider != null)
+        {
+            // Stop movement if we hit anything
+            canMove = false;
+
+            // Check if it is a Rock
+            if (hit.collider.TryGetComponent(out PushableRock rock))
+            {
+                // Push the rock
+                rock.Push(moveDirection.normalized);
+            }
+        }
 
         if (!canMove)
         {
+            // Sliding Logic (Updated to remove LayerMasks)
             Vector3 moveDirX = new Vector3(moveDirection.x, 0, 0).normalized;
             canMove = (moveDirection.x != 0) && !Physics2D.CircleCast(transform.position, playerRadius, moveDirX, moveDistance);
 
@@ -143,9 +156,9 @@ public class Player : MonoBehaviour
             selectedObject = selectedObject
         });
     }
+
     public Vector2 GetMovementVector()
     {
-        // Oyunun input sisteminden gelen ham vektörü ver
         return gameInput.GetmovementVector();
     }
 }
