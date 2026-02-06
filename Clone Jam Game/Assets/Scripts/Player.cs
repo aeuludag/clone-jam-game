@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
         public InteractableObject selectedObject;
     }
 
-    [SerializeField] private float moveSpeed = 7f;
+    [SerializeField] private float moveSpeed;
     [SerializeField] private GameInput gameInput;
 
     // REMOVED: LayerMasks are removed since you are using Default for everything
@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     private bool isWalking;
     private Vector3 interactDir;
     private InteractableObject selectedObject;
+    private Animator animator;
 
     private void Awake()
     {
@@ -30,6 +31,7 @@ public class Player : MonoBehaviour
             Debug.LogError("There is more than one Player instance!");
         }
         Instance = this;
+        animator = GetComponent<Animator>();
     }
 
     private void Start()
@@ -49,6 +51,7 @@ public class Player : MonoBehaviour
     {
         HandleMovement();
         HandleInteractions();
+        animator.SetBool("IsWalking", IsWalking());
     }
 
     public bool IsWalking()
