@@ -3,12 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-<<<<<<< Updated upstream
-  tags: []
-=======
   tags:
   - BackGround
->>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
@@ -16,7 +12,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Pushable
+  - 
   - 
   - 
   - 
@@ -46,8 +42,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-<<<<<<< Updated upstream
-=======
   - name: BackGround
     uniqueID: 2162821657
     locked: 0
@@ -57,9 +51,8 @@ TagManager:
   - name: Player
     uniqueID: 1899888707
     locked: 0
-  - name: New Layer 4
+  - name: MinigameBackGround
     uniqueID: 2042817579
     locked: 0
->>>>>>> Stashed changes
   m_RenderingLayers:
   - Default
