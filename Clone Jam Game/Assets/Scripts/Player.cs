@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private GameInput gameInput;
     [SerializeField] private LayerMask interactableLayerMask; // Ýsim güncellendi
+    [SerializeField] private LayerMask collisionsLayerMask;
 
 
     private bool isWalking;
@@ -71,7 +72,6 @@ public class Player : MonoBehaviour
 
         // 2D Raycast
         RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, interactDir, interactDistance, interactableLayerMask);
-        Debug.DrawRay(transform.position, interactDir * interactDistance, Color.red);
         if (raycastHit.collider != null)
         {
             // Çarptýðýmýz þeyde "InteractableObject" scripti var mý?
@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
         float playerRadius = .5f;
 
         // Çarpýþma kontrolü (2D)
-        bool canMove = !Physics2D.CircleCast(transform.position, playerRadius, moveDirection, moveDistance);
+        bool canMove = !Physics2D.CircleCast(transform.position, playerRadius, moveDirection, moveDistance, collisionsLayerMask);
 
         if (!canMove)
         {
@@ -142,5 +142,10 @@ public class Player : MonoBehaviour
         {
             selectedObject = selectedObject
         });
+    }
+    public Vector2 GetMovementVector()
+    {
+        // Oyunun input sisteminden gelen ham vektörü ver
+        return gameInput.GetmovementVector();
     }
 }
