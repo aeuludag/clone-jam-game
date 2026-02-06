@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
+<<<<<<< Updated upstream
   tags: []
+=======
+  tags:
+  - BackGround
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
@@ -41,5 +46,20 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< Updated upstream
+=======
+  - name: BackGround
+    uniqueID: 2162821657
+    locked: 0
+  - name: Line
+    uniqueID: 3689776103
+    locked: 0
+  - name: Player
+    uniqueID: 1899888707
+    locked: 0
+  - name: New Layer 4
+    uniqueID: 2042817579
+    locked: 0
+>>>>>>> Stashed changes
   m_RenderingLayers:
   - Default
