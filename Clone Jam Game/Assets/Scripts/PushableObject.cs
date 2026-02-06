@@ -5,7 +5,7 @@ using UnityEngine;
 public class PushableRock : MonoBehaviour
 {
     [Header("Ayarlar")]
-    [SerializeField] private float pushSpeed = 8f;
+    [SerializeField] private float pushSpeed = 0.01f;
 
     private Rigidbody2D rb;
     private bool isPushed;
