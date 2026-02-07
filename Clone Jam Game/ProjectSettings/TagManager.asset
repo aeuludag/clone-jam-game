@@ -53,6 +53,9 @@ TagManager:
   - name: Door
     uniqueID: 962679863
     locked: 0
+  - name: Plant
+    uniqueID: 4064255481
+    locked: 0
   - name: Player
     uniqueID: 1899888707
     locked: 0
