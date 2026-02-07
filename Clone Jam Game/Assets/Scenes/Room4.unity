@@ -263,6 +263,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 7778466783396387497, guid: fa7664f0973615b4ab2ce15746e8652b, type: 3}
+      propertyPath: doorId
+      value: Room4Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778466783396387497, guid: fa7664f0973615b4ab2ce15746e8652b, type: 3}
+      propertyPath: roomToTransform
+      value: Room3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -374,6 +382,71 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc1be94cee997ec42827db15a62c2752, type: 3}
+--- !u!1001 &801080880
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4862728890710604188, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.03907
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862728890710604188, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.95656
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862728890710604188, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862728890710604188, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862728890710604188, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862728890710604188, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862728890710604188, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862728890710604188, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862728890710604188, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862728890710604188, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574744897806645028, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: openedDoors.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574744897806645028, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: 'openedDoors.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773906085300493568, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: m_Name
+      value: DayCycleManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
 --- !u!1 &1093017698
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,3 +579,4 @@ SceneRoots:
   - {fileID: 1275163688}
   - {fileID: 477381527}
   - {fileID: 532574544}
+  - {fileID: 801080880}

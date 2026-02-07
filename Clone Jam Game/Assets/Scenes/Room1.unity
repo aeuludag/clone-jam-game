@@ -1026,6 +1026,10 @@ PrefabInstance:
       value: Door
       objectReference: {fileID: 0}
     - target: {fileID: 7778466783396387497, guid: fa7664f0973615b4ab2ce15746e8652b, type: 3}
+      propertyPath: doorId
+      value: Room1Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778466783396387497, guid: fa7664f0973615b4ab2ce15746e8652b, type: 3}
       propertyPath: spawnPointName
       value: SpawnPointLeft
       objectReference: {fileID: 0}
@@ -1099,12 +1103,16 @@ PrefabInstance:
       value: Door (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7778466783396387497, guid: fa7664f0973615b4ab2ce15746e8652b, type: 3}
+      propertyPath: doorId
+      value: Room1Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778466783396387497, guid: fa7664f0973615b4ab2ce15746e8652b, type: 3}
       propertyPath: spawnPointName
-      value: 
+      value: SpawnPointRight
       objectReference: {fileID: 0}
     - target: {fileID: 7778466783396387497, guid: fa7664f0973615b4ab2ce15746e8652b, type: 3}
       propertyPath: roomToTransform
-      value: 
+      value: FactoryEnterance
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
