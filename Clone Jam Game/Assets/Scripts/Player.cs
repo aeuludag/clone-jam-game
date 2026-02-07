@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -20,9 +21,14 @@ public class Player : MonoBehaviour
     private InteractableObject selectedObject;
     private Animator animator;
 
+    private Animator GetAnimator()
+    {
+        return animator;
+    }
+
     private void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (Instance != null)
         {
             //GameObject temp = Instance.gameObject;
             //Instance = this;
@@ -31,24 +37,63 @@ public class Player : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject);
         animator = GetComponent<Animator>();
+    }
+
+    // This acts as a middle-man to start the Coroutine
+    private void StartSpawnRoutine()
+    {
+        StartCoroutine(SpawnWithDelayRoutine());
     }
 
     private void Start()
     {
         gameInput.OnInteractAction += GameInput_OnInteractAction;
-        SceneTransitionManager.OnRoomChanged += MoveToSpawnPoint;
+        if (!string.IsNullOrEmpty(SceneTransitionManager.TargetSpawnName))
+        {
+            StartCoroutine(SpawnWithDelayRoutine());
+        }
+    }
+    private IEnumerator SpawnWithDelayRoutine()
+    {
+        // 1. Wait until the end of the current frame 
+        // This allows Unity to finish loading the hierarchy
+        yield return new WaitForEndOfFrame();
+
+        // 2. (Optional) Wait for a physical split-second 
+        // yield return new WaitForSeconds(0.05f); 
+
+        if (!string.IsNullOrEmpty(SceneTransitionManager.TargetSpawnName))
+        {
+            GameObject spawnPoint = GameObject.Find(SceneTransitionManager.TargetSpawnName);
+
+            if (spawnPoint != null)
+            {
+                // Teleport
+                transform.position = spawnPoint.transform.position;
+                Debug.Log("Teleported to: " + spawnPoint.name);
+            }
+            else
+            {
+                Debug.LogError("Could not find: " + SceneTransitionManager.TargetSpawnName);
+            }
+
+            // 3. Clear the static data ONLY after the move is confirmed
+            SceneTransitionManager.TargetSpawnName = null;
+        }
     }
 
-    private void MoveToSpawnPoint()
+
+
+    /*private void MoveToSpawnPoint()
     {
         GameObject spawnPoint = GameObject.Find(SceneTransitionManager.TargetSpawnName);
         if (spawnPoint != null)
         {
             transform.position = spawnPoint.transform.position;
         }
-    }
+    }*/
+
 
     private void GameInput_OnInteractAction(object sender, System.EventArgs e)
     {

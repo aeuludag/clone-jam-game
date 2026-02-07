@@ -8,7 +8,6 @@ public class Door : InteractableObject
     public override void Interact()
     {
         if (roomToTransform != null && spawnPointName != null) {
-            SceneTransitionManager.TriggerRoomChange();
             SceneTransitionManager.TargetSpawnName = spawnPointName;
             SceneManager.LoadScene(roomToTransform);
         }
