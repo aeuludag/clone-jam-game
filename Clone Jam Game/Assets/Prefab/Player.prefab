@@ -48,9 +48,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   moveSpeed: 5
   gameInput: {fileID: 0}
+  interactionsLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
   collisionsLayerMask:
     serializedVersion: 2
-    m_Bits: 129
+    m_Bits: 137
 --- !u!95 &5050960223730764596
 Animator:
   serializedVersion: 7
