@@ -12,11 +12,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space)) { 
+            CloseMinigame();
+        }
     }
 
     public void CloseMinigame()
     {
-        SceneManager.UnloadSceneAsync("LineMiniGame");
+        SceneManager.UnloadSceneAsync("EmirMinigameScene");
 
         if (Player.Instance != null)
         {

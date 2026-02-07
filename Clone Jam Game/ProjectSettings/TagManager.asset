@@ -59,5 +59,14 @@ TagManager:
   - name: MinigameBackGround
     uniqueID: 2042817579
     locked: 0
+  - name: Object1
+    uniqueID: 3709508575
+    locked: 0
+  - name: Object2
+    uniqueID: 2989988047
+    locked: 0
+  - name: Object3
+    uniqueID: 3028886635
+    locked: 0
   m_RenderingLayers:
   - Default

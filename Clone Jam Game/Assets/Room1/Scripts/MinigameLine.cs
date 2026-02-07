@@ -5,7 +5,7 @@ public class MinigameLine : InteractableObject
 {
     public override void Interact()
     {
-        SceneManager.LoadScene("LineMiniGame", LoadSceneMode.Additive);
+        SceneManager.LoadScene("EmirMinigameScene", LoadSceneMode.Additive);
 
         Player.Instance.enabled = false;
     }
