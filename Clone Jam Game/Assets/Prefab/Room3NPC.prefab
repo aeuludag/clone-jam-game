@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3845415938330790250}
   - component: {fileID: 1546206603282655844}
   m_Layer: 0
-  m_Name: Room3NPS
+  m_Name: Room3NPC
   m_TagString: NPS
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
