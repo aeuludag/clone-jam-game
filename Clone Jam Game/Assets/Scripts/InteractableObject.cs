@@ -1,10 +1,12 @@
+using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InteractableObject : MonoBehaviour
 {
+    public UnityEvent unityEvent;
     public virtual void Interact()
     {
-        Debug.Log("Interact");
+        unityEvent?.Invoke();
     }
-
 }
