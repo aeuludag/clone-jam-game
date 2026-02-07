@@ -10,7 +10,6 @@ public class Room3NPCController : InteractableObject
     public int lower_y;
     public float speed;
     public DialogueBox dialogueBox;
-    public Dialogue dialogue;
     private int direction;
 
     void Start()
@@ -33,10 +32,5 @@ public class Room3NPCController : InteractableObject
                 direction = 1;
             }
         }
-    }
-
-    public override void Interact()
-    {
-        dialogueBox.StartDialogue(dialogue);
     }
 }

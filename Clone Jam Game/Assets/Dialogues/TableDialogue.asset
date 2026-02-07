@@ -10,11 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4e6c367c0f6d4bc5b2b9340bb16263a, type: 3}
-  m_Name: Morning
+  m_Name: TableDialogue
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
-  speaker: You
+  speaker: Table
   lines:
-  - '*yawn*'
-  - It's morning again...
-  - ...
-  - I have to go to work.
+  - This table holds your past, present,
+  - and gives a reasonable expectancy for your future.
