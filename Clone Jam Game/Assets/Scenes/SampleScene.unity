@@ -867,7 +867,7 @@ MonoBehaviour:
   gameInput: {fileID: 1124331561}
   collisionsLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
 --- !u!95 &1330960767
 Animator:
   serializedVersion: 7
