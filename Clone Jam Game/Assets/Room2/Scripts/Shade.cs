@@ -1,39 +1,48 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
-using static Player;
 
 public class Shade : MonoBehaviour
 {
-    public static event Action  PlayerEnterShade;
-    public static event Action PlayerExitShade;
+    public GameObject player;
+    public Inspector inspector;
+    public float shadowTreshHold;
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Player") { 
-            PlayerEnterShade?.Invoke();
-        }
-    }
+    private bool playerInside;
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.tag == "Player") { 
-            PlayerExitShade?.Invoke();
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
+        if (player.transform.position.x - transform.position.x <= 1)
         {
-            PlayerEnterShade?.Invoke();
+            if (Vector3.Distance(player.transform.position, transform.position) <= shadowTreshHold)
+            {
+                PlayerUnderShade();
+            }
+            else
+            {
+                PlayerExitShade();
+            }
+        }
+        else {
+            PlayerExitShade();
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    public void PlayerExitShade()
     {
-        if (collision.gameObject.tag == "Player")
+        if (playerInside)
         {
-            PlayerExitShade?.Invoke();
+            playerInside = false;
+            inspector.ExitShade(); 
+        }
+    }
+
+    public void PlayerUnderShade()
+    {
+        if (!playerInside)
+        {
+            playerInside = true;
+            inspector.EnterShade();
         }
     }
 }

@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4e6c367c0f6d4bc5b2b9340bb16263a, type: 3}
   m_Name: InspectorDialog1
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
-  speaker: 
-  lines: []
+  speaker: Inspector
+  lines:
+  - What are you doing here!
+  - Go to the toilet and turn back to your job!

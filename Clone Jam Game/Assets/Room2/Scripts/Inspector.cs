@@ -4,6 +4,7 @@ using UnityEngine;
 public class Inspector : MonoBehaviour
 {
     public GameObject Player;
+
     public bool playerIsSafe;
 
     public DialogueBox dialogueBox;
@@ -19,15 +20,17 @@ public class Inspector : MonoBehaviour
     private float nextEventTime;
     private SpriteRenderer spriteRenderer;
 
+    private int shadeCount = 0;
+
     void Start()
     {
-        Shade.PlayerEnterShade += PlayerUnderShade;
-        Shade.PlayerExitShade += PlayerExitShade;
         ToilateDoor.PlayerOnTheToilate += PlayerOnTheToilate;
         ToilateDoor.PlayerExitTheToilate += PlayerExitTheToilate;
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = isLookingUp ? lookUp : lookDown;
+
+        playerIsSafe = shadeCount > 0;
     }
 
     // Update is called once per frame
@@ -37,6 +40,8 @@ public class Inspector : MonoBehaviour
         isLookingUp ^= true;
         nextEventTime += isLookingUp ? upSeconds : downSeconds;
         spriteRenderer.sprite = isLookingUp ? lookUp : lookDown;
+
+        playerIsSafe = shadeCount > 0;
 
         if (isLookingUp && !playerIsSafe)
         {
@@ -55,16 +60,14 @@ public class Inspector : MonoBehaviour
         }
     }
 
-    public void PlayerExitShade() {
-        if (playerIsSafe) {
-            playerIsSafe = false;
-        }
+    public void EnterShade()
+    {
+        shadeCount++;
     }
 
-    public void PlayerUnderShade() {
-        if (!playerIsSafe){
-            playerIsSafe = true;
-        }
+    public void ExitShade()
+    {
+        shadeCount = Mathf.Max(0, shadeCount - 1);
     }
 
     public void PlayerOnTheToilate() {
@@ -77,8 +80,6 @@ public class Inspector : MonoBehaviour
 
     void OnDestroy()
     {
-        Shade.PlayerEnterShade -= PlayerUnderShade;
-        Shade.PlayerExitShade -= PlayerExitShade;
         ToilateDoor.PlayerOnTheToilate -= PlayerOnTheToilate;
         ToilateDoor.PlayerExitTheToilate -= PlayerExitTheToilate;
     }
