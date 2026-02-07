@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class ChocolateBox : MonoBehaviour
 {
-    public int chocolateCount = 0;
+    public HandController hand;
     public bool isTypeBad = false;
     public void AddChocolate(Chocolate chocolate)
     {
-        if(isTypeBad == chocolate.isBad) chocolateCount++;
+        if (isTypeBad == chocolate.isBad) { hand.IncreasePoint(); } else { hand.DecreasePoint(); }
         Destroy(chocolate.gameObject);
     }
 }

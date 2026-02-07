@@ -1,3 +1,5 @@
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,10 +7,16 @@ public class HandController : MonoBehaviour
 {
     public Vector3 offset;
     public Chocolate itemHeld;
+    public Collider2D belt;
     public float grabRadius = 1.0f;
     
     private PlayerInputActions playerInputActions;
     [SerializeField] private Collider2D handHitbox;
+    [DoNotSerialize] public int points;
+
+    public AudioClip good;
+    public AudioClip bad;
+    public AudioSource audioSource;
 
     void Awake()
     {
@@ -99,8 +107,27 @@ public class HandController : MonoBehaviour
                 break;
             }
         }
+        if(!colliders.Contains(belt))
+        {
+            Debug.Log("HUH");
+            itemHeld.isHeld = true;
+        }
 
         itemHeld = null;
+    }
+
+    public void IncreasePoint()
+    {
+        audioSource.clip = good;
+        audioSource.Play();
+        points++;
+    }
+
+    public void DecreasePoint()
+    {
+        audioSource.clip = bad;
+        audioSource.Play();
+        points--;
     }
 
     private void OnDrawGizmosSelected()

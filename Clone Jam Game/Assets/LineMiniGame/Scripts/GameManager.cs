@@ -1,20 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public HandController hand;
+    public Button endWorkButton;
+    public int threshold;
 
-    // Update is called once per frame
+
+    // Update is called once per frame (comment to shut errors)
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) { 
-            CloseMinigame();
-        }
+        endWorkButton.interactable = hand.points >= threshold;
     }
 
     public void CloseMinigame()

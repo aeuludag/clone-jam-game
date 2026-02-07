@@ -20,9 +20,7 @@ public class ChocolateSpawner : MonoBehaviour
             var obj = Instantiate(choco, transform.position + new Vector3(Random.Range(0f, 1f), Random.Range(0f, 1f), 0), transform.rotation);
             var theChoco = obj.GetComponent<Chocolate>();
             theChoco.xSpeed = chocoSpeed;
-            theChoco.isBad = Random.Range(0f, 1f) >= 0.7f;
-
-
+            theChoco.isBad = Random.Range(0f, 1f) >= 0.3f;
 
             newChocoTime = Time.time + delaySeconds;
         }

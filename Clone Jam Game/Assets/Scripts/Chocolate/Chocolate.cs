@@ -15,9 +15,9 @@ public class Chocolate : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(isHeld) return;
-        transform.position += new Vector3(xSpeed * Time.deltaTime, 0f, 0f);
+        transform.position += new Vector3(xSpeed, 0f, 0f);
     }
 }
