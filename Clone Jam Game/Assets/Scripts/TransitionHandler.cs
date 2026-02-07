@@ -7,4 +7,13 @@ public class TransitionHandler : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+    public static void CloseMinigame(string sceneName)
+    {
+        SceneManager.UnloadSceneAsync(sceneName);
+
+        if (Player.Instance != null)
+        {
+            Player.Instance.enabled = true;
+        }
+    }
 }

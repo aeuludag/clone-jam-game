@@ -9,8 +9,10 @@ public class HandController : MonoBehaviour
     public Chocolate itemHeld;
     public Collider2D belt;
     public float grabRadius = 1.0f;
-    
+    public Sprite openHand;
+    public Sprite closedHand;
     private PlayerInputActions playerInputActions;
+    private SpriteRenderer spriteRenderer;
     [SerializeField] private Collider2D handHitbox;
     [DoNotSerialize] public int points;
 
@@ -33,7 +35,10 @@ public class HandController : MonoBehaviour
     {
         playerInputActions.Disable();
     }
-
+    void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
     void Update()
     {
         // 1. Convert Screen Space (Mouse) to World Space
@@ -87,6 +92,7 @@ public class HandController : MonoBehaviour
         {
             nearestChocolate.isHeld = true;
             itemHeld = nearestChocolate;
+            spriteRenderer.sprite = closedHand;
         }
     }
 
@@ -113,6 +119,7 @@ public class HandController : MonoBehaviour
         }
 
         itemHeld = null;
+        spriteRenderer.sprite = openHand;
     }
 
     public void IncreasePoint()

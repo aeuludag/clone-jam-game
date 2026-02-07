@@ -54,6 +54,7 @@ public class Numpad : MonoBehaviour
 
     public void Send(string number)
     {
+        if(isOpen) return;
         currentNumber += number;
         textMeshPro.text = $"CODE: {currentNumber}";
         if(correctNumber.Length <= currentNumber.Length && correctNumber != currentNumber)
