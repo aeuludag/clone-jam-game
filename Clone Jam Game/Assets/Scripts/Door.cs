@@ -41,6 +41,5 @@ public class Door : InteractableObject
     {
         isLocked = false;
         DayCycleManager.Instance.MarkDoorAsOpen(doorId);
-        Debug.Log($"Door {doorId} is now permanently unlocked!");
     }
 }

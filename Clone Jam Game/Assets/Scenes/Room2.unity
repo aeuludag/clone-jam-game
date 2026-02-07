@@ -487,10 +487,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4190896464573334443, guid: dc1be94cee997ec42827db15a62c2752, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 633870598}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc1be94cee997ec42827db15a62c2752, type: 3}
 --- !u!4 &500000234 stripped
 Transform:
@@ -594,21 +591,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4190896464573334443, guid: dc1be94cee997ec42827db15a62c2752, type: 3}
   m_PrefabInstance: {fileID: 453754550}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &633870598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633870593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1613dd5ad72adae47bfac86bf6e3a9e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Shade
-  player: {fileID: 633870593}
-  inspector: {fileID: 0}
-  shadowTreshHold: 3
 --- !u!1 &740083382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,7 +1238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Shade
   player: {fileID: 633870593}
   inspector: {fileID: 1025993233}
-  shadowTreshHold: 4
+  shadowTreshHold: 3
 --- !u!1 &1272660228
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,7 +1342,7 @@ GameObject:
   - component: {fileID: 1516140029}
   - component: {fileID: 1516140031}
   - component: {fileID: 1516140032}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Corridoor_Right_Toilate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1521,9 +1503,17 @@ PrefabInstance:
       value: -605191193
       objectReference: {fileID: 0}
     - target: {fileID: 680809696407658457, guid: 99a9f1a75dcc0403191cbd7d42e12412, type: 3}
+      propertyPath: harts
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 680809696407658457, guid: 99a9f1a75dcc0403191cbd7d42e12412, type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 633870593}
+    - target: {fileID: 680809696407658457, guid: 99a9f1a75dcc0403191cbd7d42e12412, type: 3}
+      propertyPath: dialogue2
+      value: 
+      objectReference: {fileID: 11400000, guid: 02686ee3e46ea9d43859d2d126bd0008, type: 2}
     - target: {fileID: 680809696407658457, guid: 99a9f1a75dcc0403191cbd7d42e12412, type: 3}
       propertyPath: dialogueBox
       value: 
@@ -1531,6 +1521,14 @@ PrefabInstance:
     - target: {fileID: 680809696407658457, guid: 99a9f1a75dcc0403191cbd7d42e12412, type: 3}
       propertyPath: downSeconds
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 680809696407658457, guid: 99a9f1a75dcc0403191cbd7d42e12412, type: 3}
+      propertyPath: spawnPointName
+      value: SpawnPointRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 680809696407658457, guid: 99a9f1a75dcc0403191cbd7d42e12412, type: 3}
+      propertyPath: roomToTransform
+      value: Room1
       objectReference: {fileID: 0}
     - target: {fileID: 680809696407658457, guid: 99a9f1a75dcc0403191cbd7d42e12412, type: 3}
       propertyPath: waitAfterWarning
@@ -1821,7 +1819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Shade
   player: {fileID: 633870593}
   inspector: {fileID: 1025993233}
-  shadowTreshHold: 4
+  shadowTreshHold: 3
 --- !u!1 &1750717496
 GameObject:
   m_ObjectHideFlags: 0
@@ -2282,6 +2280,10 @@ PrefabInstance:
     - target: {fileID: 3528836068381808018, guid: fa7664f0973615b4ab2ce15746e8652b, type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528836068381808018, guid: fa7664f0973615b4ab2ce15746e8652b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6991740606182078974, guid: fa7664f0973615b4ab2ce15746e8652b, type: 3}
       propertyPath: m_Color.b
