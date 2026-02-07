@@ -22,17 +22,32 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null)
+        if (Instance != null && Instance != this)
         {
-            Debug.LogError("There is more than one Player instance!");
+            //GameObject temp = Instance.gameObject;
+            //Instance = this;
+            //Destroy(temp);
+            Destroy(Instance);
+            return;
         }
         Instance = this;
+        DontDestroyOnLoad(gameObject);
         animator = GetComponent<Animator>();
     }
 
     private void Start()
     {
         gameInput.OnInteractAction += GameInput_OnInteractAction;
+        SceneTransitionManager.OnRoomChanged += MoveToSpawnPoint;
+    }
+
+    private void MoveToSpawnPoint()
+    {
+        GameObject spawnPoint = GameObject.Find(SceneTransitionManager.TargetSpawnName);
+        if (spawnPoint != null)
+        {
+            transform.position = spawnPoint.transform.position;
+        }
     }
 
     private void GameInput_OnInteractAction(object sender, System.EventArgs e)

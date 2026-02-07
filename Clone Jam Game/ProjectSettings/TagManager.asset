@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - BackGround
+  - Spawn
   layers:
   - Default
   - TransparentFX
@@ -47,6 +48,9 @@ TagManager:
     locked: 0
   - name: Line
     uniqueID: 3689776103
+    locked: 0
+  - name: Door
+    uniqueID: 962679863
     locked: 0
   - name: Player
     uniqueID: 1899888707
