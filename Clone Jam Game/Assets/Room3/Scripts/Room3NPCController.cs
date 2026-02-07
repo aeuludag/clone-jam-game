@@ -37,7 +37,6 @@ public class Room3NPCController : InteractableObject
 
     public override void Interact()
     {
-        //TODO
         dialogueBox.StartDialogue(dialogue);
     }
 }

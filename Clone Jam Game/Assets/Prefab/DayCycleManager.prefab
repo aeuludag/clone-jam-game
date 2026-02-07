@@ -44,5 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd9661355c3c0a849991b8d59434edb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DayCycleManager
-  openedDoors: 
+  openedDoors:
+  - HomeRight
+  - FactoryEnterance
+  - Room1Right
+  - Room2Right
+  - Room2Left
+  - Room3Right
+  - Room3Left
+  - Room4Right
+  - Room4Left
   currentDay: 1

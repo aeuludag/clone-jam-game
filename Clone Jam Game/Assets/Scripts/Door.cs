@@ -7,6 +7,9 @@ public class Door : InteractableObject
     public string roomToTransform;
     public string spawnPointName;
 
+    public DialogueBox dialogueBox;
+    public Dialogue dialogue;
+
     private bool isLocked = true;
 
     private void Start()
@@ -27,8 +30,9 @@ public class Door : InteractableObject
                 SceneManager.LoadScene(roomToTransform);
             }
         }
-        else { 
+        else {
             // TODO: Kapý kilitili uayrýsý lazým!
+            dialogueBox.StartDialogue(dialogue);
         }
     }
 
