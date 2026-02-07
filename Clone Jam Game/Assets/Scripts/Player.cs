@@ -12,8 +12,11 @@ public class Player : MonoBehaviour
         public InteractableObject selectedObject;
     }
 
-    [SerializeField] private float moveSpeed;
+    [SerializeField] private float moveSpeed = 7f; // Hýzýn Inspector'da 0 görünmemesi için varsayýlan deðer verdim
     [SerializeField] private GameInput gameInput;
+
+    // BURASI GERÝ GELDÝ: Neye çarpýp neye çarpmayacaðýmýzý seçmeliyiz.
+    [SerializeField] private LayerMask collisionsLayerMask;
 
 
     private bool isWalking;
@@ -107,7 +110,19 @@ public class Player : MonoBehaviour
     {
         HandleMovement();
         HandleInteractions();
-        animator.SetBool("IsWalking", IsWalking());
+
+        // Animasyon Kodlarý
+        Vector2 dir = gameInput.GetmovementVector();
+        if (dir != Vector2.zero)
+        {
+            animator.SetFloat("InputX", dir.x);
+            animator.SetFloat("InputY", dir.y);
+            animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+        }
     }
 
     public bool IsWalking()
@@ -127,7 +142,7 @@ public class Player : MonoBehaviour
 
         float interactDistance = 2f;
 
-        // UPDATED: Removed layerMask parameter. It now checks everything on Default layer.
+        // Etkileþim için LayerMask kullanmýyoruz, her þeyi görebilir.
         RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, interactDir, interactDistance);
 
         if (raycastHit.collider != null)
@@ -158,29 +173,28 @@ public class Player : MonoBehaviour
         float moveDistance = moveSpeed * Time.deltaTime;
         float playerRadius = .5f;
 
-        // UPDATED: Removed collisionsLayerMask. It detects everything.
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, playerRadius, moveDirection, moveDistance);
+        // DÜZELTME: collisionsLayerMask parametresini geri ekledik.
+        // Böylece Trigger'larý görmezden gelebileceðiz.
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, playerRadius, moveDirection, moveDistance, collisionsLayerMask);
 
         bool canMove = true;
 
         if (hit.collider != null)
         {
-            // Stop movement if we hit anything
             canMove = false;
 
-            // Check if it is a Rock
+            // Taþa çarpýnca itme kodu
             if (hit.collider.TryGetComponent(out PushableRock rock))
             {
-                // Push the rock
                 rock.Push(moveDirection.normalized);
             }
         }
 
         if (!canMove)
         {
-            // Sliding Logic (Updated to remove LayerMasks)
+            // Kayma (Sliding) mantýðýna da maskeyi ekledik
             Vector3 moveDirX = new Vector3(moveDirection.x, 0, 0).normalized;
-            canMove = (moveDirection.x != 0) && !Physics2D.CircleCast(transform.position, playerRadius, moveDirX, moveDistance);
+            canMove = (moveDirection.x != 0) && !Physics2D.CircleCast(transform.position, playerRadius, moveDirX, moveDistance, collisionsLayerMask);
 
             if (canMove)
             {
@@ -189,7 +203,7 @@ public class Player : MonoBehaviour
             else
             {
                 Vector3 moveDirY = new Vector3(0, moveDirection.y, 0).normalized;
-                canMove = (moveDirection.y != 0) && !Physics2D.CircleCast(transform.position, playerRadius, moveDirY, moveDistance);
+                canMove = (moveDirection.y != 0) && !Physics2D.CircleCast(transform.position, playerRadius, moveDirY, moveDistance, collisionsLayerMask);
 
                 if (canMove)
                 {
