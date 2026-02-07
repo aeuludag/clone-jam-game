@@ -63,11 +63,13 @@ public class Numpad : MonoBehaviour
             currentNumber = "";
             spriteRenderer.sprite = closedSprite;
             textMeshPro.text = $"WRONG!";
+            DayCycleManager.Instance.isNumpaddedDoorUnlocked = false;
         } else if(correctNumber == currentNumber)
         {
             isOpen = true;
             spriteRenderer.sprite = openSprite;
             textMeshPro.text = $"CORRECT!";
+            DayCycleManager.Instance.isNumpaddedDoorUnlocked = true;
         }
     }
 }

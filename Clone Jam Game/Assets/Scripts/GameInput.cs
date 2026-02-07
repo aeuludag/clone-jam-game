@@ -23,7 +23,7 @@ public class GameInput : MonoBehaviour
 
     void Start()
     {
-        if(dialogueBox == null) { dialogueBox = GameObject.FindGameObjectWithTag("dialogueBox")?.GetComponent<DialogueBox>(); }
+        if(dialogueBox == null) { dialogueBox = GameObject.FindGameObjectWithTag("dialogueBox").GetComponent<DialogueBox>(); }
     }
 
     private void Pause_Performed(InputAction.CallbackContext obj)
@@ -34,7 +34,7 @@ public class GameInput : MonoBehaviour
     private void Interact_Performed(InputAction.CallbackContext obj)
     {
         // Diyalog kutusu yoksa veya kapal�ysa etkile�ime izin ver
-        if (dialogueBox == null || !dialogueBox.gameObject.activeSelf)
+        if ((dialogueBox == null || !dialogueBox.gameObject.activeSelf))
         {
             OnInteractAction?.Invoke(this, EventArgs.Empty);
         }
@@ -43,7 +43,7 @@ public class GameInput : MonoBehaviour
     public Vector2 GetmovementVector()
     {
         // Diyalog a��ksa hareket etme
-        if (dialogueBox != null && dialogueBox.gameObject.activeSelf)
+        if ((dialogueBox != null && dialogueBox.gameObject.activeSelf))
         {
             return Vector2.zero;
         }

@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 69b6e8d79553e2a418e8cd2fb707bc33
+  - enabled: 1
+    path: Assets/Scenes/KeypadDoor.unity
+    guid: 139c447b81dad45838eda6167a961368
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

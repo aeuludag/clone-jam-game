@@ -9,6 +9,7 @@ public class DayCycleManager : MonoBehaviour
     public string[] openedDoors;
 
     public int currentDay = 1;
+    public bool isNumpaddedDoorUnlocked;
 
     private void Awake()
     {
