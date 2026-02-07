@@ -13,7 +13,7 @@ public class TransitionHandler : MonoBehaviour
 
         if (Player.Instance != null)
         {
-            Player.Instance.enabled = true;
+            Player.Instance.gameObject.SetActive(true);
         }
     }
 }

@@ -18,9 +18,9 @@ public class GameManager : MonoBehaviour
         countTMP.text = hand.points.ToString();
     }
 
-    public void CloseMinigame()
+    public void CloseMinigame(string sceneName)
     {
-        SceneManager.UnloadSceneAsync("EmirMinigameScene");
+        SceneManager.UnloadSceneAsync(sceneName);
 
         if (Player.Instance != null)
         {
