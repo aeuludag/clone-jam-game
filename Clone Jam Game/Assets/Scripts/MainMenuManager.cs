@@ -24,7 +24,7 @@ public class MainMenuManager : MonoBehaviour
     // --- DÝÐER FONKSÝYONLARIN ---
     public void PlayGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Room1");
     }
 
     public void QuitGame()
