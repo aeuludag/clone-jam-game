@@ -6,7 +6,11 @@ public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
 
+    private InteractableObject heldObject; 
+    private Vector3 lastInteractDir;       
+
     public event EventHandler<OnSelectedObjectChangedEventArgs> OnSelectedObjectChanged;
+
     public class OnSelectedObjectChangedEventArgs : EventArgs
     {
         public InteractableObject selectedObject;
@@ -100,9 +104,34 @@ public class Player : MonoBehaviour
 
     private void GameInput_OnInteractAction(object sender, System.EventArgs e)
     {
-        if (selectedObject != null)
+        // SENARYO 1: ELÝM DOLU MU? (Önce býrakmayý dene)
+        if (heldObject != null)
         {
-            selectedObject.Interact();
+            // "Elimdeki þey bir CarryableBox mý?" diye kontrol et ve dönüþtür
+            if (heldObject is CarryableBox boxToDrop)
+            {
+                Vector3 dropPosition = transform.position + (lastInteractDir*1.5f);
+                boxToDrop.Drop(dropPosition);
+            }
+
+            heldObject = null; // Eli boþalt
+        }
+        // SENARYO 2: ELÝM BOÞ VE YERDE BÝR ÞEY VAR MI?S
+        else if (selectedObject != null)
+        {
+            // "Yerdeki þey bir CarryableBox mý?" diye kontrol et
+            if (selectedObject is CarryableBox boxToPick)
+            {
+                // Evet, bu bir kutu! O zaman AL.
+                heldObject = boxToPick;
+                boxToPick.PickUp();
+                SetSelectedObject(null);
+            }
+            else
+            {
+                // Hayýr, bu kutu deðil (Tabela, NPC vb.). Normal etkileþime gir.
+                selectedObject.Interact();
+            }
         }
     }
 
@@ -134,6 +163,10 @@ public class Player : MonoBehaviour
     {
         Vector2 inputVector = gameInput.GetmovementVector();
         Vector3 moveDirection = new Vector3(inputVector.x, inputVector.y, 0f);
+        if (moveDirection != Vector3.zero)
+        {
+            lastInteractDir = moveDirection; 
+        }
 
         if (moveDirection != Vector3.zero)
         {
@@ -163,6 +196,7 @@ public class Player : MonoBehaviour
         {
             SetSelectedObject(null);
         }
+
     }
 
     private void HandleMovement()
@@ -234,4 +268,5 @@ public class Player : MonoBehaviour
     {
         return gameInput.GetmovementVector();
     }
+
 }
