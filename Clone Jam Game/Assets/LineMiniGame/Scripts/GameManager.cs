@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -6,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public HandController hand;
     public Button endWorkButton;
+    public TextMeshProUGUI countTMP;
     public int threshold;
 
 
@@ -13,6 +15,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         endWorkButton.interactable = hand.points >= threshold;
+        countTMP.text = hand.points.ToString();
     }
 
     public void CloseMinigame()
