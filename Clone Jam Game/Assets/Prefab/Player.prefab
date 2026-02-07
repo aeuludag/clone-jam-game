@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7389223684287531426}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
   gameInput: {fileID: 0}
   collisionsLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 129
 --- !u!95 &5050960223730764596
 Animator:
   serializedVersion: 7
@@ -119,7 +119,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1899888707
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2690792559708188323, guid: 9531a74ced7d8ea4dab587cdd9b778de, type: 3}

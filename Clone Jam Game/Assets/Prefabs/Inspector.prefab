@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8006137897549733078}
   - component: {fileID: 181340185806437702}
   - component: {fileID: 2110366391239143518}
+  - component: {fileID: 680809696407658457}
   m_Layer: 0
   m_Name: Inspector
   m_TagString: Untagged
@@ -104,6 +105,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8583269251d304a7ea9ef5b7c9cdf79a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  lookUp: {fileID: -6917663349898328218, guid: 0888ac5349251481db11ca2a607bc413, type: 3}
+  lookDown: {fileID: 8331452141746924900, guid: d7f158fb5fd284a09a07638820fb9a84, type: 3}
+  isLookingUp: 0
+  upSeconds: 1
+  downSeconds: 3
+--- !u!114 &680809696407658457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4743318171836322914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0481818f015d41a4ea075ce2c641fb83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Inspector
+  Player: {fileID: 0}
+  playerIsSafe: 0
+  dialogueBox: {fileID: 0}
+  dialogue: {fileID: 11400000, guid: f75bcf6ba1f9bbc43b4b6a640a8f4cdc, type: 2}
   lookUp: {fileID: -6917663349898328218, guid: 0888ac5349251481db11ca2a607bc413, type: 3}
   lookDown: {fileID: 8331452141746924900, guid: d7f158fb5fd284a09a07638820fb9a84, type: 3}
   isLookingUp: 0

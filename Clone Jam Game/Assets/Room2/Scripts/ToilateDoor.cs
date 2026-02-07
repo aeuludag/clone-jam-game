@@ -10,6 +10,11 @@ public class ToilateDoor : InteractableObject
     public GameObject Arrow;
     public GameObject Player;
     private bool currentlyInteracting = false;
+
+    private void Start()
+    {
+        Arrow.SetActive(false);
+    }
     public override void Interact()
     {
         if (!currentlyInteracting)
