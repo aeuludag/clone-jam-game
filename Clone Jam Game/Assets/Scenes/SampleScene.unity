@@ -725,6 +725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2283da3524fb51946a1107e876bca480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameInput
+  dialogueBox: {fileID: 0}
 --- !u!1 &1146681400
 GameObject:
   m_ObjectHideFlags: 0

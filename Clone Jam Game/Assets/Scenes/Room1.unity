@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 1004789965}
   - component: {fileID: 1004789967}
   - component: {fileID: 1004789968}
+  - component: {fileID: 1004789969}
   m_Layer: 0
   m_Name: Line
   m_TagString: Untagged
@@ -279,7 +280,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 7117250599002277349, guid: ccc23f7899b68324b81f6f83006eb18d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -298,8 +299,8 @@ Transform:
   m_GameObject: {fileID: 1004789964}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 2, z: 0}
-  m_LocalScale: {x: 19.540798, y: 1, z: 1}
+  m_LocalPosition: {x: -0.0151, y: 2.7071, z: 0}
+  m_LocalScale: {x: 12.816438, y: 16.430222, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -342,13 +343,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.3882352, y: 0.1283086}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.3882352, y: 0.1283086}
   m_EdgeRadius: 0
 --- !u!114 &1004789968
 MonoBehaviour:
@@ -362,6 +363,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52fecff8ac43fd043b100da9041a46c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MinigameLine
+--- !u!95 &1004789969
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004789964}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 026861783fe4844afb4a08cf94617377, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1269249833
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,6 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2283da3524fb51946a1107e876bca480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameInput
+  dialogueBox: {fileID: 0}
 --- !u!4 &1464662081
 Transform:
   m_ObjectHideFlags: 0
