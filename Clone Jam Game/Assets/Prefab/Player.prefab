@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae08789dfd83a946b7a11eb3e9d0fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  moveSpeed: 4
+  moveSpeed: 5
   gameInput: {fileID: 0}
   collisionsLayerMask:
     serializedVersion: 2

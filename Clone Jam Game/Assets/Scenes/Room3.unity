@@ -703,6 +703,10 @@ PrefabInstance:
       value: Door (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7778466783396387497, guid: fa7664f0973615b4ab2ce15746e8652b, type: 3}
+      propertyPath: doorId
+      value: Room3Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778466783396387497, guid: fa7664f0973615b4ab2ce15746e8652b, type: 3}
       propertyPath: roomToTransform
       value: Room2
       objectReference: {fileID: 0}
@@ -762,6 +766,10 @@ PrefabInstance:
     - target: {fileID: 3528836068381808018, guid: fa7664f0973615b4ab2ce15746e8652b, type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778466783396387497, guid: fa7664f0973615b4ab2ce15746e8652b, type: 3}
+      propertyPath: doorId
+      value: Room3Right
       objectReference: {fileID: 0}
     - target: {fileID: 7778466783396387497, guid: fa7664f0973615b4ab2ce15746e8652b, type: 3}
       propertyPath: spawnPointName
@@ -898,6 +906,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1309146561
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4862728890710604188, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.03907
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862728890710604188, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.95656
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862728890710604188, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862728890710604188, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862728890710604188, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862728890710604188, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862728890710604188, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862728890710604188, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862728890710604188, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862728890710604188, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574744897806645028, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: openedDoors.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574744897806645028, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: 'openedDoors.Array.data[0]'
+      value: Room3Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773906085300493568, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
+      propertyPath: m_Name
+      value: DayCycleManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ca80a58d9825ff0448545d90bc56b861, type: 3}
 --- !u!1 &1541034957 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2479316345643465263, guid: 86ac4d35e008cb14cb0bc0c588b25e67, type: 3}
@@ -1143,3 +1216,4 @@ SceneRoots:
   - {fileID: 6896644656546388442}
   - {fileID: 284489380}
   - {fileID: 728815259}
+  - {fileID: 1309146561}
