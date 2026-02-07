@@ -1,36 +1,45 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Sahne geçiþleri için þart
+using UnityEngine.SceneManagement;
+using UnityEngine.UI; // Slider ve Toggle kullanmak için bu KÜTÜPHANE ÞART!
 
 public class MainMenuManager : MonoBehaviour
 {
-    [Header("Ayarlar Paneli")]
-    // Unity Editör'den Settings Panelini buraya sürükleyeceðiz
+    [Header("UI Referanslarý")]
     [SerializeField] private GameObject settingsPanel;
 
-    // OYNA BUTONU
+    // Unity ses sistemini en basit haliyle kontrol etmek için:
+    public void SetVolume(float volume)
+    {
+        // AudioListener, oyundaki tüm seslerin duyulduðu "kulaktýr".
+        // 0 (Sessiz) ile 1 (Tam Ses) arasýnda deðer alýr.
+        AudioListener.volume = volume;
+    }
+
+    public void SetFullscreen(bool isFullscreen)
+    {
+        // Ekraný tam ekran yapar veya pencere moduna alýr.
+        Screen.fullScreen = isFullscreen;
+    }
+
+    // --- DÝÐER FONKSÝYONLARIN ---
     public void PlayGame()
     {
-        // "SampleScene" yerine oyun sahnenin adý neyse TAM OLARAK onu yaz.
-        // File > Build Settings listesinde bu sahnenin olduðundan emin ol.
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Room1");
     }
 
-    // AYARLAR BUTONU (Açar)
-    public void OpenSettings()
-    {
-        settingsPanel.SetActive(true); // Paneli görünür yap
-    }
-
-    // AYARLARI KAPATMA BUTONU (Geri Dön)
-    public void CloseSettings()
-    {
-        settingsPanel.SetActive(false); // Paneli gizle
-    }
-
-    // ÇIKIÞ BUTONU
     public void QuitGame()
     {
-        Debug.Log("Oyundan Çýkýldý!"); // Editörde çalýþtýðýný görmek için
         Application.Quit();
+        Debug.Log("Çýkýþ Yapýldý");
+    }
+
+    public void OpenSettings()
+    {
+        settingsPanel.SetActive(true);
+    }
+
+    public void CloseSettings()
+    {
+        settingsPanel.SetActive(false);
     }
 }
