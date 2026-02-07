@@ -109,7 +109,6 @@ public class HandController : MonoBehaviour
         }
         if(!colliders.Contains(belt))
         {
-            Debug.Log("HUH");
             itemHeld.isHeld = true;
         }
 

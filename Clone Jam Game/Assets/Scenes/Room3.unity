@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2283da3524fb51946a1107e876bca480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameInput
+  dialogueBox: {fileID: 1861980801}
 --- !u!4 &222739698
 Transform:
   m_ObjectHideFlags: 0
@@ -1124,9 +1125,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2479316345643465263, guid: 86ac4d35e008cb14cb0bc0c588b25e67, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1541034958}
-    - targetCorrespondingSourceObject: {fileID: 2479316345643465263, guid: 86ac4d35e008cb14cb0bc0c588b25e67, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1541034959}
   m_SourcePrefab: {fileID: 100100000, guid: 86ac4d35e008cb14cb0bc0c588b25e67, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

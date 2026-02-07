@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameInput : MonoBehaviour
 {
+    public DialogueBox dialogueBox;
     public event EventHandler OnInteractAction;
 
     private PlayerInputActions playerInputActions;
@@ -18,11 +19,12 @@ public class GameInput : MonoBehaviour
 
     private void Interact_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        OnInteractAction?.Invoke(this, EventArgs.Empty);
+        if(dialogueBox == null || !dialogueBox.gameObject.activeSelf) OnInteractAction?.Invoke(this, EventArgs.Empty);
     }
 
     public Vector2 GetmovementVector()
     {
+        if(dialogueBox != null && dialogueBox.gameObject.activeSelf) return Vector2.zero;
         Vector2 inputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
         return inputVector;
     }

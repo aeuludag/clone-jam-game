@@ -7,7 +7,6 @@ public class ChocolateEater : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("COLLLISIONN");
         var choco = collision.gameObject.GetComponent<Chocolate>();
         if(choco == null) Destroy(collision.gameObject);
 
