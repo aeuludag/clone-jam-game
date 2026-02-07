@@ -16,10 +16,10 @@ public class Player : MonoBehaviour
         public InteractableObject selectedObject;
     }
 
-    [SerializeField] private float moveSpeed = 7f; // Hýzýn Inspector'da 0 görünmemesi için varsayýlan deðer verdim
+    [SerializeField] private float moveSpeed = 7f; 
     [SerializeField] private GameInput gameInput;
 
-    // BURASI GERÝ GELDÝ: Neye çarpýp neye çarpmayacaðýmýzý seçmeliyiz.
+    [SerializeField] private LayerMask interactionsLayerMask;
     [SerializeField] private LayerMask collisionsLayerMask;
 
 
@@ -176,7 +176,7 @@ public class Player : MonoBehaviour
         float interactDistance = 2f;
 
         // Etkileþim için LayerMask kullanmýyoruz, her þeyi görebilir.
-        RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, interactDir, interactDistance);
+        RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, interactDir, interactDistance, interactionsLayerMask);
 
         if (raycastHit.collider != null)
         {

@@ -8,11 +8,12 @@ TagManager:
   - Spawn
   - NPS
   - dialogueBox
+  - CarryableBox
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Interactable
   - Water
   - UI
   - KeypadButtons

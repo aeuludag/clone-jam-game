@@ -4,13 +4,11 @@ using UnityEngine.InputSystem;
 
 public class GameInput : MonoBehaviour
 {
-    // --- EVENTLER ---
-    // Kar���kl��� �nlemek i�in ismini de�i�tirdim:
+
     public event EventHandler OnInteractAction;
     public event EventHandler OnPauseToggle;
 
-    // --- DE���KENLER ---
-    [SerializeField] private DialogueBox dialogueBox; // Inspector'dan atamay� unutma
+    [SerializeField] private DialogueBox dialogueBox; 
     private PlayerInputActions playerInputActions;
 
     private void Awake()
@@ -18,7 +16,6 @@ public class GameInput : MonoBehaviour
         playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
 
-        // Etkile�im Tu�u Ba�lant�s�
         playerInputActions.Player.Interact.performed += Interact_Performed;
 
         playerInputActions.Player.Pause.performed += Pause_Performed;
@@ -31,7 +28,6 @@ public class GameInput : MonoBehaviour
 
     private void Pause_Performed(InputAction.CallbackContext obj)
     {
-        // Event'i tetikle (PauseToggle ismini kullan�yoruz)
         OnPauseToggle?.Invoke(this, EventArgs.Empty);
     }
 
