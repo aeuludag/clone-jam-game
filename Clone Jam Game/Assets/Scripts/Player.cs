@@ -14,10 +14,6 @@ public class Player : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private GameInput gameInput;
 
-    // REMOVED: LayerMasks are removed since you are using Default for everything
-    // [SerializeField] private LayerMask interactableLayerMask; 
-    // [SerializeField] private LayerMask collisionsLayerMask;
-
 
     private bool isWalking;
     private Vector3 interactDir;
