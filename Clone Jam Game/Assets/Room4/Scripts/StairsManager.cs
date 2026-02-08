@@ -5,6 +5,8 @@ using UnityEngine.Video;
 
 public class StairsManager : InteractableObject
 {
+    public Player player;
+
     public DialogueBox dialogueBox;
     public Dialogue dialogue1;
     public Dialogue dialogue2;
@@ -23,14 +25,15 @@ public class StairsManager : InteractableObject
         }
         else
         {
+            //if (dialogueBox != null) dialogueBox.StartDialogue(dialogue2);
+            //unityEvent?.Invoke();
+
             // CutScene
             if (!string.IsNullOrEmpty(videoName))
             {
+                Destroy(player);
                 SceneManager.LoadScene(videoName);
             }
-
-            if (dialogueBox != null) dialogueBox.StartDialogue(dialogue2);
-            unityEvent?.Invoke();
         }
     }
 }
