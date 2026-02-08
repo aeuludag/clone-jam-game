@@ -7,6 +7,9 @@ public class ToilateDoor : InteractableObject
     public static event Action PlayerOnTheToilate;
     public static event Action PlayerExitTheToilate;
 
+    public bool women;
+    public Inspector Inspector;
+
     public GameObject Arrow;
     public GameObject Player;
     private bool currentlyInteracting = false;
@@ -17,19 +20,26 @@ public class ToilateDoor : InteractableObject
     }
     public override void Interact()
     {
-        if (!currentlyInteracting)
-        {
-            Player.SetActive(false);
-            Arrow.SetActive(true);
-            currentlyInteracting = true;
-            PlayerOnTheToilate?.Invoke();
+        if (women) {
+            if (!currentlyInteracting)
+            {
+                Player.SetActive(false);
+                Arrow.SetActive(true);
+                currentlyInteracting = true;
+                PlayerOnTheToilate?.Invoke();
+            }
+            else
+            {
+                Player.SetActive(true);
+                Arrow.SetActive(false);
+                currentlyInteracting = false;
+                PlayerExitTheToilate?.Invoke();
+            }
+
+        } else {
+            Inspector.finishImediately = true;
         }
-        else {
-            Player.SetActive(true);
-            Arrow.SetActive(false);
-            currentlyInteracting = false;
-            PlayerExitTheToilate?.Invoke();
-        }
+
     }
 
 }

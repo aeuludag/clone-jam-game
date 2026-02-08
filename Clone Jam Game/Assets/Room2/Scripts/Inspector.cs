@@ -7,6 +7,8 @@ public class Inspector : MonoBehaviour
     public int harts;
     private bool sceneIsOver;
     private bool hasTakenDamage;
+    public bool finishImediately;
+    public bool playerIsOnTheToilate;
 
     public GameObject Player;
 
@@ -33,6 +35,7 @@ public class Inspector : MonoBehaviour
 
     void Start()
     {
+        finishImediately = false;
         sceneIsOver = false;
         hasTakenDamage = false;
         if (harts <= 0) {
@@ -52,7 +55,7 @@ public class Inspector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!sceneIsOver && harts <= 0) {
+        if (!sceneIsOver && (finishImediately || harts <= 0)) {
             sceneIsOver = true;
             StartCoroutine(PunishThePlayer());
             return;
@@ -71,7 +74,7 @@ public class Inspector : MonoBehaviour
 
         playerIsSafe = shadeCount > 0;
          
-        if (isLookingUp && !playerIsSafe && !hasTakenDamage)
+        if (!finishImediately && isLookingUp && !playerIsSafe && !playerIsOnTheToilate && !hasTakenDamage)
         {
             hasTakenDamage = true;
             dialogueBox.StartDialogue(dialogue);
@@ -83,11 +86,6 @@ public class Inspector : MonoBehaviour
     IEnumerator CatchPlayerAfterDelay()
     {
         yield return new WaitForSeconds(waitAfterWarning);
-
-        //if (isLookingUp && !playerIsSafe)
-        //{
-        //    Debug.Log("GAME OVER: Player was caught!");
-        //}
     }
 
     IEnumerator PunishThePlayer()
@@ -111,11 +109,11 @@ public class Inspector : MonoBehaviour
     }
 
     public void PlayerOnTheToilate() {
-        playerIsSafe = true;
+        playerIsOnTheToilate = true;
     }
 
     public void PlayerExitTheToilate() {
-        playerIsSafe = false; 
+        playerIsOnTheToilate = false; 
     }
 
     void OnDestroy()
