@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4e6c367c0f6d4bc5b2b9340bb16263a, type: 3}
-  m_Name: Room3NPCDialogue
+  m_Name: Room3NumpaddedDoor
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
-  speaker: Working Class #2
+  speaker: You
   lines:
-  - This shift is tiresome, but at least it pays well.
-  - 67 Cents an hour. Who gives that nowadays?
-  - '*You hear children scream from far away*'
+  - I need to look like I'm working.
+  - Maybe I should carry those boxes like them!
