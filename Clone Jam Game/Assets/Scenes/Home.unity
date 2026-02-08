@@ -1519,6 +1519,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 4163921006759456123, guid: 1689569675f7e4946b09373429ff39d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2139337390}
+    - target: {fileID: 4163921006759456123, guid: 1689569675f7e4946b09373429ff39d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeGame
+      objectReference: {fileID: 0}
     - target: {fileID: 6723511946544796886, guid: 1689569675f7e4946b09373429ff39d5, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2330,6 +2338,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2139337390 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3202042468921610472, guid: 94136e356f243304b97fa175d63dbe05, type: 3}
+  m_PrefabInstance: {fileID: 539831130}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1af667e864f0bd848bb3967d34d6168c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseMenuManager
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
