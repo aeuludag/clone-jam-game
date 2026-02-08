@@ -1,27 +1,38 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI; // Slider ve Toggle kullanmak için bu KÜTÜPHANE ÞART!
+using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
     [Header("UI Referanslarý")]
-    [SerializeField] private GameObject settingsPanel;
+    [SerializeField] private GameObject mainMenuPanel; // ANA MENÜYÜ TUTAN OBJE (YENÝ)
+    [SerializeField] private GameObject settingsPanel; // AYARLAR PANELÝ
 
-    // Unity ses sistemini en basit haliyle kontrol etmek için:
+    // --- SES VE EKRAN AYARLARI ---
     public void SetVolume(float volume)
     {
-        // AudioListener, oyundaki tüm seslerin duyulduðu "kulaktýr".
-        // 0 (Sessiz) ile 1 (Tam Ses) arasýnda deðer alýr.
         AudioListener.volume = volume;
     }
 
     public void SetFullscreen(bool isFullscreen)
     {
-        // Ekraný tam ekran yapar veya pencere moduna alýr.
         Screen.fullScreen = isFullscreen;
     }
 
-    // --- DÝÐER FONKSÝYONLARIN ---
+    // --- PANEL GEÇÝÞLERÝ (Burasý deðiþti) ---
+    public void OpenSettings()
+    {
+        settingsPanel.SetActive(true);  // Ayarlarý aç
+        mainMenuPanel.SetActive(false); // Ana menüyü kapat (Gizle)
+    }
+
+    public void CloseSettings()
+    {
+        settingsPanel.SetActive(false); // Ayarlarý kapat
+        mainMenuPanel.SetActive(true);  // Ana menüyü geri aç (Göster)
+    }
+
+    // --- OYUN KONTROLLERÝ ---
     public void PlayGame()
     {
         SceneManager.LoadScene("Home");
@@ -31,15 +42,5 @@ public class MainMenuManager : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Çýkýþ Yapýldý");
-    }
-
-    public void OpenSettings()
-    {
-        settingsPanel.SetActive(true);
-    }
-
-    public void CloseSettings()
-    {
-        settingsPanel.SetActive(false);
     }
 }
