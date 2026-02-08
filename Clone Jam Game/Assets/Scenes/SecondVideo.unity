@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63745daff2122f24993f66afdb62dd1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Video1Manager
-  roomToTransform: 
+  roomToTransform: CreditsEnd
   spawnPointName: 
   videoPlayer: {fileID: 810990589}
   videoName: Cutscene 1
