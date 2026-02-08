@@ -55,3 +55,4 @@ MonoBehaviour:
   currentDay: 1
   isNumpaddedDoorUnlocked: 0
   LineMiniGameClosed: 0
+  elevatorFalled: 0

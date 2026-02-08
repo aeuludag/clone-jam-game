@@ -3,11 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class MinigameLine : InteractableObject
 {
-    public DayCycleManager DayCycleManager;
     public bool hasBeenOpened;
     public override void Interact()
     {
-        DayCycleManager.LineMiniGameClosed = true;
+        DayCycleManager.Instance.LineMiniGameClosed = true;
+        DayCycleManager.Instance.MarkDoorAsOpen("Room1Right");
         if(hasBeenOpened) return;
         SceneManager.LoadScene("EmirMinigameScene", LoadSceneMode.Additive);
         hasBeenOpened = true;

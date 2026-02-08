@@ -1759,7 +1759,7 @@ MonoBehaviour:
         m_CallState: 2
   upper_y: 0
   lower_y: -2
-  speed: 5
+  speed: 2.5
   dialogueBox: {fileID: 1861980801}
   upSprite: {fileID: -206867908975942754, guid: c5be0a61943404b05a8b11a5526806ca, type: 3}
   downSprite: {fileID: -2671611037433257585, guid: 66fa0e346f72d4f26a2a01cd3614e220, type: 3}
@@ -1939,7 +1939,7 @@ MonoBehaviour:
         m_CallState: 2
   upper_y: 0
   lower_y: -2
-  speed: 5
+  speed: 2.5
   dialogueBox: {fileID: 1861980801}
   upSprite: {fileID: -206867908975942754, guid: c5be0a61943404b05a8b11a5526806ca, type: 3}
   downSprite: {fileID: -2671611037433257585, guid: 66fa0e346f72d4f26a2a01cd3614e220, type: 3}
