@@ -152,7 +152,7 @@ MonoBehaviour:
   roomToTransform: CreditsEnd
   spawnPointName: 
   videoPlayer: {fileID: 239792600}
-  videoName: Cutscene 1
+  videoName: SecondVideo
 --- !u!328 &239792600
 VideoPlayer:
   m_ObjectHideFlags: 0
