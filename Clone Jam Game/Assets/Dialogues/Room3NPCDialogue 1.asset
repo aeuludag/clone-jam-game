@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4e6c367c0f6d4bc5b2b9340bb16263a, type: 3}
   m_Name: Room3NPCDialogue 1
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
-  speaker: Working Class
+  speaker: Working Class #1
   lines:
-  - Man, I've been working for 18 hours.
-  - Eighteen. Hours.
+  - Man, I've been working for 21 hours.
+  - Twenty One. Hours.
   - I want to go home.
