@@ -1,19 +1,30 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class BoxSpawner : MonoBehaviour
 {
     public GameObject box;
     public bool goingRight = true;
-    public float xSpeed = 0.1f;
-    
+    public float xSpeed = 0.01f;
+    public float delaySeconds = 1;
+    private float newBoxTime;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //TODO BOX OBJECT!!
+        newBoxTime = 1;
     }
 
-
+    // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(xSpeed, 0f, 0f);
+        if(newBoxTime < Time.time)
+        {
+            var obj = Instantiate(box, transform.position, quaternion.identity);
+            var theBox = obj.GetComponent<CarryableBox>();
+            theBox.xSpeed = xSpeed;
+
+            newBoxTime = Time.time + delaySeconds;
+        }
     }
 }
