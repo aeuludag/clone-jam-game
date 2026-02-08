@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class StairsManager : InteractableObject
 {
@@ -7,17 +9,10 @@ public class StairsManager : InteractableObject
     public Dialogue dialogue1;
     public Dialogue dialogue2;
 
-    public DayCycleManager DayCycleManager;
-    void Start()
-    {
-        
-    }
+    public VideoClip cutsceneVideo;
+    public string videoName;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public DayCycleManager DayCycleManager;
 
     public override void Interact()
     {
@@ -29,6 +24,11 @@ public class StairsManager : InteractableObject
         else
         {
             // CutScene
+            if (!string.IsNullOrEmpty(videoName))
+            {
+                SceneManager.LoadScene(videoName);
+            }
+
             if (dialogueBox != null) dialogueBox.StartDialogue(dialogue2);
             unityEvent?.Invoke();
         }
