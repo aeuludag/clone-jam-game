@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4e6c367c0f6d4bc5b2b9340bb16263a, type: 3}
-  m_Name: Posters
+  m_Name: Wondering
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
-  speaker: Posters
+  speaker: You
   lines:
-  - These posters always inspire me.
-  - But why is there a text on my wall?
-  - What does Wasd mean? Whatever.
+  - Don't really want to go home now.
+  - I wonder where does this belt go...
+  - Maybe I should follow it!
