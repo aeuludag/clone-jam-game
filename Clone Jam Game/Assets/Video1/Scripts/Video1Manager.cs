@@ -19,10 +19,8 @@ public class Video1Manager : MonoBehaviour
                 videoPlayer.clip = clip;
                 videoPlayer.Play();
             }
-            else
-            {
-                Debug.LogError("Video not found in Resources folder: " + videoName);
-                SkipVideo(); // Fallback
+            else {
+                SkipVideo();
             }
         }
 
@@ -37,8 +35,9 @@ public class Video1Manager : MonoBehaviour
 
     void SkipVideo()
     {
-        // Load the actual room we wanted to go to
-        SceneManager.LoadScene(roomToTransform);
+        if (!string.IsNullOrEmpty(roomToTransform)) {
+            SceneManager.LoadScene(roomToTransform);
+        }
     }
 
     // Update is called once per frame

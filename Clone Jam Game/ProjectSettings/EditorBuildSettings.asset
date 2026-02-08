@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Room1.unity
     guid: ebb65dab15294074a81fd17475e98cea
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LineMiniGame.unity
     guid: 4bec2d8f3ca170549a2bc58b73ed3598
   - enabled: 1
@@ -41,6 +41,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FirstVideo.unity
     guid: 2cc1d23c574a77e498525064490a8802
+  - enabled: 1
+    path: Assets/Scenes/SecondVideo.unity
+    guid: 4664ff21d6baf4241a05038ac219184d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

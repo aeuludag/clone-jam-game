@@ -1018,6 +1018,8 @@ MonoBehaviour:
   dialogueBox: {fileID: 1357502238}
   dialogue1: {fileID: 11400000, guid: 6e37c08c5b708d34c89ac393fd9a038c, type: 2}
   dialogue2: {fileID: 11400000, guid: 88d4d1efc85a0a540bd677111396e113, type: 2}
+  cutsceneVideo: {fileID: 32900000, guid: 290bdc09a912e403797b544b72b86cf2, type: 3}
+  videoName: SecondVideo
   DayCycleManager: {fileID: 611711490}
 --- !u!1 &1275163687
 GameObject:
