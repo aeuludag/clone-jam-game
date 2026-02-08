@@ -916,7 +916,7 @@ GameObject:
   - component: {fileID: 777882734}
   - component: {fileID: 777882733}
   - component: {fileID: 777882736}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PostersCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1037,8 +1037,8 @@ Transform:
   m_GameObject: {fileID: 777882732}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.3344, y: 2.6921, z: 0}
-  m_LocalScale: {x: 4.327871, y: 2.1830287, z: 1}
+  m_LocalPosition: {x: -1.2199, y: 3.029, z: 0}
+  m_LocalScale: {x: 6.7892694, y: 2.3228595, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1345,7 +1345,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.14350626}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1355,7 +1355,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.7129875}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &986966103
 SpriteRenderer:
@@ -1425,8 +1425,8 @@ Transform:
   m_GameObject: {fileID: 986966101}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.8904, y: 1.2403, z: 0}
-  m_LocalScale: {x: 1.2169287, y: 1.3455313, z: 1}
+  m_LocalPosition: {x: -4.9194, y: 1.2306, z: 0}
+  m_LocalScale: {x: 1.3913648, y: 1.3648794, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
