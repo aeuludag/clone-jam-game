@@ -512,7 +512,7 @@ MonoBehaviour:
         m_CallState: 2
   doorId: Room3Right
   roomToTransform: Room4
-  spawnPointName: Room4Left
+  spawnPointName: SpawnPointLeft
   dialogueBox: {fileID: 0}
   dialogue: {fileID: 0}
 --- !u!114 &250621850

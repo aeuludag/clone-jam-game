@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   speaker: You
   lines:
-  - It is better to use the stairs.
+  - Time to go down.
