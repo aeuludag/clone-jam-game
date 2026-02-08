@@ -22,6 +22,11 @@ public class Door : InteractableObject
 
     public override void Interact()
     {
+        if (DayCycleManager.Instance != null && DayCycleManager.Instance.IsDoorOpen(doorId))
+        {
+            isLocked = false;
+        }
+
         if (!isLocked)
         {
             if (roomToTransform != null && spawnPointName != null)
