@@ -1300,7 +1300,7 @@ GameObject:
   - component: {fileID: 1004789967}
   - component: {fileID: 1004789968}
   - component: {fileID: 1004789969}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1620,7 +1620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1918907693487150149, guid: dc1be94cee997ec42827db15a62c2752, type: 3}
       propertyPath: collisionsLayerMask.m_Bits
-      value: 1
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4190896464573334443, guid: dc1be94cee997ec42827db15a62c2752, type: 3}
       propertyPath: m_Name
