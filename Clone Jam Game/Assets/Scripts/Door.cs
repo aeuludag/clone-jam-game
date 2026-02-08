@@ -36,7 +36,6 @@ public class Door : InteractableObject
             }
         }
         else {
-            // TODO: Kap� kilitili uayr�s� laz�m!
             if(dialogueBox != null) dialogueBox.StartDialogue(dialogue);
             unityEvent?.Invoke();
         }

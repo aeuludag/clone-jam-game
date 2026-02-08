@@ -11,6 +11,7 @@ public class DayCycleManager : MonoBehaviour
     public bool isNumpaddedDoorUnlocked;
 
     public bool LineMiniGameClosed;
+    public bool elevatorFalled;
 
     private void Awake()
     {
