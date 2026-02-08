@@ -973,7 +973,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.116066515}
+  m_Offset: {x: 0, y: 0.07624118}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -983,7 +983,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1.2321329}
+  m_Size: {x: 1, y: 0.8475175}
   m_EdgeRadius: 0
 --- !u!4 &1213394845
 Transform:
@@ -1015,6 +1015,7 @@ MonoBehaviour:
   unityEvent:
     m_PersistentCalls:
       m_Calls: []
+  player: {fileID: 0}
   dialogueBox: {fileID: 1357502238}
   dialogue1: {fileID: 11400000, guid: 6e37c08c5b708d34c89ac393fd9a038c, type: 2}
   dialogue2: {fileID: 11400000, guid: 88d4d1efc85a0a540bd677111396e113, type: 2}
@@ -1368,7 +1369,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.20173241}
+  m_Offset: {x: 0, y: 0.046121106}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1378,7 +1379,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1.4034647}
+  m_Size: {x: 1, y: 0.90775764}
   m_EdgeRadius: 0
 --- !u!4 &1685465475
 Transform:
