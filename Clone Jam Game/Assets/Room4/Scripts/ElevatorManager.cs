@@ -6,12 +6,12 @@ public class ElevatorManager : InteractableObject
     public DialogueBox dialogueBox;
     public Dialogue dialogue;
 
-    public AudioSource audioSource;
+    private AudioSource audioSource;
 
     public DayCycleManager DayCycleManager;
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class ElevatorManager : InteractableObject
     {
         if (!DayCycleManager.elevatorFalled)
         {
-
+            audioSource.Play();
             DayCycleManager.elevatorFalled = true;
         }
         else {

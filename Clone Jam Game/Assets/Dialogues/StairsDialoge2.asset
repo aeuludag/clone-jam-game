@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4e6c367c0f6d4bc5b2b9340bb16263a, type: 3}
-  m_Name: ElevatorFalledDown
+  m_Name: StairsDialoge2
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   speaker: You
   lines:
-  - ELEVATOR HAS FALLEN DOWN!!!
+  - It is better to use the stairs.
