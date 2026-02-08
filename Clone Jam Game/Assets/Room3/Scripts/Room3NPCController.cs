@@ -10,11 +10,15 @@ public class Room3NPCController : InteractableObject
     public int lower_y;
     public float speed;
     public DialogueBox dialogueBox;
+    public Sprite upSprite;
+    public Sprite downSprite;
+    private SpriteRenderer spriteRenderer;
     private int direction;
 
     void Start()
     {
         direction = -1;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -25,11 +29,12 @@ public class Room3NPCController : InteractableObject
             if (transform.position.y >= upper_y)
             {
                 direction = -1;
-
+                spriteRenderer.sprite = downSprite;
             }
             else if (transform.position.y <= lower_y)
             {
                 direction = 1;
+                spriteRenderer.sprite = upSprite;
             }
         }
     }
