@@ -6,10 +6,12 @@ public class LinePuzzleManager : MonoBehaviour
     public int totalBoxesNeeded = 3; 
     private int currentBoxesOnLine = 0;
     public bool done = false;
+    public BoxSpawner boxSpawner;
 
-    public void AddBox()
+    public void AddBox(CarryableBox carryableBox)
     {
         currentBoxesOnLine++;
+        // carryableBox.xSpeed = -boxSpawner.xSpeed;
         CheckWin();
     }
 

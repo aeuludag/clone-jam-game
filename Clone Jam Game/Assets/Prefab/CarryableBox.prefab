@@ -108,6 +108,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  xSpeed: 0
 --- !u!50 &754457653005748877
 Rigidbody2D:
   serializedVersion: 5
@@ -212,8 +213,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -585458721
-  m_SortingLayer: 8
+  m_SortingLayerID: -605191193
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7372763951733464745, guid: 1210057dd417a48e1af03eeaa5058e6c, type: 3}

@@ -9,7 +9,7 @@ public class LineZone : MonoBehaviour
             
         if (other.CompareTag("CarryableBox"))
         {
-            puzzleManager.AddBox();
+            puzzleManager.AddBox(other.GetComponent<CarryableBox>());
         }
     }
 
