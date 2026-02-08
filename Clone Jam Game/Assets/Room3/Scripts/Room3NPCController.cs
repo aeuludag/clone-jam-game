@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UIElements;
-using static UnityEditor.Rendering.MaterialUpgrader;
 
 public class Room3NPCController : InteractableObject
 {
