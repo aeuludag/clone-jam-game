@@ -47,7 +47,6 @@ MonoBehaviour:
   openedDoors:
   - HomeRight
   - FactoryEnterance
-  - Room1Right
   - Room2Right
   - Room2Left
   - Room3Left
