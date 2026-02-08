@@ -38,6 +38,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/KeypadDoor.unity
     guid: 139c447b81dad45838eda6167a961368
+  - enabled: 1
+    path: Assets/Scenes/FirstVideo.unity
+    guid: 2cc1d23c574a77e498525064490a8802
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -1618,16 +1618,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 0bd6cfb4d731f384baac9b861e9ca1b7, type: 2}
     - target: {fileID: 7778466783396387497, guid: fa7664f0973615b4ab2ce15746e8652b, type: 3}
+      propertyPath: videoName
+      value: FirstVideo
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778466783396387497, guid: fa7664f0973615b4ab2ce15746e8652b, type: 3}
       propertyPath: dialogueBox
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7778466783396387497, guid: fa7664f0973615b4ab2ce15746e8652b, type: 3}
+      propertyPath: cutsceneVideo
+      value: 
+      objectReference: {fileID: 32900000, guid: 713b692e3a1a5d74997fc3bc7fbb5abf, type: 3}
     - target: {fileID: 7778466783396387497, guid: fa7664f0973615b4ab2ce15746e8652b, type: 3}
       propertyPath: spawnPointName
       value: SpawnPointLeft
       objectReference: {fileID: 0}
     - target: {fileID: 7778466783396387497, guid: fa7664f0973615b4ab2ce15746e8652b, type: 3}
       propertyPath: roomToTransform
-      value: FactoryEnterance
+      value: FirstVideo
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6991740606182078974, guid: fa7664f0973615b4ab2ce15746e8652b, type: 3}

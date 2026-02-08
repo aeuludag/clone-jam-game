@@ -1,11 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class Door : InteractableObject
 {
     public string doorId;
     public string roomToTransform;
     public string spawnPointName;
+
+    public VideoClip cutsceneVideo;
+    public string videoName;
 
     public DialogueBox dialogueBox;
     public Dialogue dialogue;
@@ -32,7 +36,14 @@ public class Door : InteractableObject
             if (roomToTransform != null && spawnPointName != null)
             {
                 SceneTransitionManager.TargetSpawnName = spawnPointName;
-                SceneManager.LoadScene(roomToTransform);
+                if (!string.IsNullOrEmpty(videoName))
+                {
+                    SceneManager.LoadScene(videoName);
+                }
+                else
+                {
+                    SceneManager.LoadScene(roomToTransform);
+                }
             }
         }
         else {
