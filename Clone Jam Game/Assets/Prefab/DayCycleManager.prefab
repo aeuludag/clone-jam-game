@@ -47,7 +47,6 @@ MonoBehaviour:
   openedDoors:
   - HomeRight
   - FactoryEnterance
-  - Room1Right
   - Room2Right
   - Room2Left
   - Room3Right
@@ -55,3 +54,5 @@ MonoBehaviour:
   - Room4Right
   - Room4Left
   currentDay: 1
+  isNumpaddedDoorUnlocked: 0
+  LineMiniGameClosed: 0
