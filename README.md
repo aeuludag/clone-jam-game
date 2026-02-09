@@ -1,9 +1,9 @@
-# Alita
+# Aita
 BOA Game Jam 5, mini unity game.
 **You can download via itch.com** https://aeuludag.itch.io/aita
 
 ## Story
-Alita is a waffer factory worker whose all days are identical to each other. One day she saw a bilboard on which a woman eats a different brand waffer. A question comes to her mind "Who eats the waffers we produce?". After that point she decides to follow the production line and finds out the truth of her life.
+Aita is a waffer factory worker whose all days are identical to each other. One day she saw a bilboard on which a woman eats a different brand waffer. A question comes to her mind "Who eats the waffers we produce?". After that point she decides to follow the production line and finds out the truth of her life.
 
 ## 🎮 Game Play
 **Click the image to watch gameplay video**
