@@ -13,10 +13,10 @@ Alita is a waffer factory worker whose all days are identical to each other. One
 
 ## Team Members:
   ### 👨‍💻👨‍💻👨‍💻Programers:
-    -  Ahmet Emir Uludağ
-    -  Çağla Güneş Ocaklı 
-    -  Derin Faydalı
-    
+  -  Ahmet Emir Uludağ
+  -  Çağla Güneş Ocaklı
+  -  Derin Faydalı
+        
   ### 🖼️🎨🖌️ Art Assets: 
   - Joudi Fakhouri
   - Yalın Çete
@@ -24,9 +24,6 @@ Alita is a waffer factory worker whose all days are identical to each other. One
    
 ## 🤖 Thecnologies
   - Unity 6
-  - 
-  
-
 
 ## Attributions
 
