@@ -8,14 +8,8 @@ Alita is a waffer factory worker whose all days are identical to each other. One
 **Click the image to watch gameplay video**
 
 <a href="https://github.com/user-attachments/assets/ee20574a-9978-408c-bc9a-c298b48ad056">
-  <img src="https://github.com/user-attachments/assets/f0ac34df-ebb8-4599-b929-28b3e5154752" width="150" />
+  <img src="https://github.com/user-attachments/assets/f0ac34df-ebb8-4599-b929-28b3e5154752" width="926" />
 </a>
-
-<img width="1656" height="926" alt="Alita Game Photo" src="https://github.com/user-attachments/assets/f0ac34df-ebb8-4599-b929-28b3e5154752" />
-
-
-
-
 
 ## Team Members:
   ### 👨‍💻👨‍💻👨‍💻Programers:
