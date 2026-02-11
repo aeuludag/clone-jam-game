@@ -7,15 +7,17 @@ TagManager:
   - BackGround
   - Spawn
   - NPS
+  - dialogueBox
+  - CarryableBox
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Interactable
   - Water
   - UI
   - KeypadButtons
-  - 
+  - Shade
   - 
   - 
   - 
@@ -53,8 +55,14 @@ TagManager:
   - name: Door
     uniqueID: 962679863
     locked: 0
+  - name: Plant
+    uniqueID: 4064255481
+    locked: 0
   - name: Player
     uniqueID: 1899888707
+    locked: 0
+  - name: Hide
+    uniqueID: 3104186499
     locked: 0
   - name: MinigameBackGround
     uniqueID: 2042817579

@@ -54,6 +54,7 @@ public class Numpad : MonoBehaviour
 
     public void Send(string number)
     {
+        if(isOpen) return;
         currentNumber += number;
         textMeshPro.text = $"CODE: {currentNumber}";
         if(correctNumber.Length <= currentNumber.Length && correctNumber != currentNumber)
@@ -62,11 +63,13 @@ public class Numpad : MonoBehaviour
             currentNumber = "";
             spriteRenderer.sprite = closedSprite;
             textMeshPro.text = $"WRONG!";
+            DayCycleManager.Instance.isNumpaddedDoorUnlocked = false;
         } else if(correctNumber == currentNumber)
         {
             isOpen = true;
             spriteRenderer.sprite = openSprite;
             textMeshPro.text = $"CORRECT!";
+            DayCycleManager.Instance.isNumpaddedDoorUnlocked = true;
         }
     }
 }

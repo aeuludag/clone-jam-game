@@ -3,12 +3,15 @@ using UnityEngine;
 
 public class DayCycleManager : MonoBehaviour
 {
-
     public static DayCycleManager Instance;
 
-    public string[] openedDoors;
+    public List<string> openedDoors = new List<string>();
 
     public int currentDay = 1;
+    public bool isNumpaddedDoorUnlocked;
+
+    public bool LineMiniGameClosed;
+    public bool elevatorFalled;
 
     private void Awake()
     {
@@ -23,20 +26,37 @@ public class DayCycleManager : MonoBehaviour
         }
     }
 
-    public bool IsDoorOpen(string doorID) {
-        for (int i = 0; i < openedDoors.Length; i++) {
-            if (openedDoors[i] == doorID) { 
-                return true;
-            }
+    private void Start()
+    {
+    }
+
+    private void Update()
+    {
+        if (LineMiniGameClosed) {
+            MarkDoorAsOpen("Room1Right");
         }
-        return false;
+        //switch(currentDay) {
+        //case 1:
+                
+        //    break;
+        //case 2:
+        //    // code block
+        //    break;
+        //default:
+        //    // code block
+        //    break;
+        //}
+    }
+
+    public bool IsDoorOpen(string doorID) {
+        return openedDoors.Contains(doorID);
     }
 
     public void MarkDoorAsOpen(string doorID)
     {
         if (!IsDoorOpen(doorID))
         {
-            openedDoors[openedDoors.Length] = (doorID);
+            openedDoors.Add(doorID);
         }
     }
 }

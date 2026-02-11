@@ -1,11 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class Door : InteractableObject
 {
     public string doorId;
     public string roomToTransform;
     public string spawnPointName;
+
+    public VideoClip cutsceneVideo;
+    public string videoName;
 
     public DialogueBox dialogueBox;
     public Dialogue dialogue;
@@ -22,17 +26,29 @@ public class Door : InteractableObject
 
     public override void Interact()
     {
+        if (DayCycleManager.Instance != null && DayCycleManager.Instance.IsDoorOpen(doorId))
+        {
+            isLocked = false;
+        }
+
         if (!isLocked)
         {
             if (roomToTransform != null && spawnPointName != null)
             {
                 SceneTransitionManager.TargetSpawnName = spawnPointName;
-                SceneManager.LoadScene(roomToTransform);
+                if (!string.IsNullOrEmpty(videoName))
+                {
+                    SceneManager.LoadScene(videoName);
+                }
+                else
+                {
+                    SceneManager.LoadScene(roomToTransform);
+                }
             }
         }
         else {
-            // TODO: Kapý kilitili uayrýsý lazým!
-            dialogueBox.StartDialogue(dialogue);
+            if(dialogueBox != null) dialogueBox.StartDialogue(dialogue);
+            unityEvent?.Invoke();
         }
     }
 
@@ -40,6 +56,5 @@ public class Door : InteractableObject
     {
         isLocked = false;
         DayCycleManager.Instance.MarkDoorAsOpen(doorId);
-        Debug.Log($"Door {doorId} is now permanently unlocked!");
     }
 }

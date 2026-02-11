@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UIElements;
-using static UnityEditor.Rendering.MaterialUpgrader;
 
 public class Room3NPCController : InteractableObject
 {
@@ -10,12 +9,15 @@ public class Room3NPCController : InteractableObject
     public int lower_y;
     public float speed;
     public DialogueBox dialogueBox;
-    public Dialogue dialogue;
+    public Sprite upSprite;
+    public Sprite downSprite;
+    private SpriteRenderer spriteRenderer;
     private int direction;
 
     void Start()
     {
         direction = -1;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -26,17 +28,13 @@ public class Room3NPCController : InteractableObject
             if (transform.position.y >= upper_y)
             {
                 direction = -1;
-
+                spriteRenderer.sprite = downSprite;
             }
             else if (transform.position.y <= lower_y)
             {
                 direction = 1;
+                spriteRenderer.sprite = upSprite;
             }
         }
-    }
-
-    public override void Interact()
-    {
-        dialogueBox.StartDialogue(dialogue);
     }
 }

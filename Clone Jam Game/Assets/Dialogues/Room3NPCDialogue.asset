@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4e6c367c0f6d4bc5b2b9340bb16263a, type: 3}
   m_Name: Room3NPCDialogue
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
-  speaker: Bob
+  speaker: Working Class #2
   lines:
-  - Hey!!!
-  - I'm bob.
-  - I say hi.
+  - This shift is tiresome, but at least it pays well.
+  - 67 Cents an hour. Who gives that nowadays?
+  - '*You hear children scream from far away*'

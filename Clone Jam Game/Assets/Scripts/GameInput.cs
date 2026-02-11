@@ -4,13 +4,11 @@ using UnityEngine.InputSystem;
 
 public class GameInput : MonoBehaviour
 {
-    // --- EVENTLER ---
-    // Karýþýklýðý önlemek için ismini deðiþtirdim:
+
     public event EventHandler OnInteractAction;
     public event EventHandler OnPauseToggle;
 
-    // --- DEÐÝÞKENLER ---
-    [SerializeField] private DialogueBox dialogueBox; // Inspector'dan atamayý unutma
+    [SerializeField] private DialogueBox dialogueBox; 
     private PlayerInputActions playerInputActions;
 
     private void Awake()
@@ -18,22 +16,25 @@ public class GameInput : MonoBehaviour
         playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
 
-        // Etkileþim Tuþu Baðlantýsý
         playerInputActions.Player.Interact.performed += Interact_Performed;
 
         playerInputActions.Player.Pause.performed += Pause_Performed;
     }
 
+    void Start()
+    {
+        if(dialogueBox == null) { dialogueBox = GameObject.FindGameObjectWithTag("dialogueBox").GetComponent<DialogueBox>(); }
+    }
+
     private void Pause_Performed(InputAction.CallbackContext obj)
     {
-        // Event'i tetikle (PauseToggle ismini kullanýyoruz)
         OnPauseToggle?.Invoke(this, EventArgs.Empty);
     }
 
     private void Interact_Performed(InputAction.CallbackContext obj)
     {
-        // Diyalog kutusu yoksa veya kapalýysa etkileþime izin ver
-        if (dialogueBox == null || !dialogueBox.gameObject.activeSelf)
+        // Diyalog kutusu yoksa veya kapalï¿½ysa etkileï¿½ime izin ver
+        if ((dialogueBox == null || !dialogueBox.gameObject.activeSelf))
         {
             OnInteractAction?.Invoke(this, EventArgs.Empty);
         }
@@ -41,8 +42,8 @@ public class GameInput : MonoBehaviour
 
     public Vector2 GetmovementVector()
     {
-        // Diyalog açýksa hareket etme
-        if (dialogueBox != null && dialogueBox.gameObject.activeSelf)
+        // Diyalog aï¿½ï¿½ksa hareket etme
+        if ((dialogueBox != null && dialogueBox.gameObject.activeSelf))
         {
             return Vector2.zero;
         }
@@ -52,7 +53,7 @@ public class GameInput : MonoBehaviour
         return inputVector;
     }
 
-    // Hafýza temizliði (Memory Leak önlemek için þart)
+    // Hafï¿½za temizliï¿½i (Memory Leak ï¿½nlemek iï¿½in ï¿½art)
     private void OnDestroy()
     {
         playerInputActions.Player.Interact.performed -= Interact_Performed;

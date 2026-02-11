@@ -5,23 +5,27 @@ using UnityEngine;
 public class PushableRock : MonoBehaviour
 {
     [Header("Ayarlar")]
-    [SerializeField] private float pushSpeed = 0.0001f;
+    // 0.0001f çok düþüktü, onu 5f gibi hissedilir bir hýza çektim.
+    [SerializeField] private float pushSpeed = 5f;
 
     private Rigidbody2D rb;
-    private bool isPushed;
+    private bool isPushed; // Bu frame'de itildi mi kontrolü
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
 
-        rb.linearDamping = 0f;
-
-        rb.gravityScale = 0f;
-        rb.freezeRotation = true;
+        
+        rb.gravityScale = 0f;          
+        rb.freezeRotation = true;      
+        rb.linearDamping = 0f;         
+        rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous; 
     }
+
     public void Push(Vector2 direction)
     {
         rb.linearVelocity = direction * pushSpeed;
+
         isPushed = true;
     }
 
@@ -29,7 +33,7 @@ public class PushableRock : MonoBehaviour
     {
         if (!isPushed)
         {
-            rb.linearVelocity = Vector2.zero; 
+            rb.linearVelocity = Vector2.zero;
         }
         isPushed = false;
     }
