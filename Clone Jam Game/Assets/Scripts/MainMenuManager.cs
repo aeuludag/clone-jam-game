@@ -4,9 +4,9 @@ using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [Header("UI Referanslarý")]
-    [SerializeField] private GameObject mainMenuPanel; // ANA MENÜYÜ TUTAN OBJE (YENÝ)
-    [SerializeField] private GameObject settingsPanel; // AYARLAR PANELÝ
+    [Header("UI Referanslarï¿½")]
+    [SerializeField] private GameObject mainMenuPanel; // ANA MENï¿½Yï¿½ TUTAN OBJE (YENï¿½)
+    [SerializeField] private GameObject settingsPanel; // AYARLAR PANELï¿½
 
     // --- SES VE EKRAN AYARLARI ---
     public void SetVolume(float volume)
@@ -19,20 +19,20 @@ public class MainMenuManager : MonoBehaviour
         Screen.fullScreen = isFullscreen;
     }
 
-    // --- PANEL GEÇÝÞLERÝ (Burasý deðiþti) ---
+    // --- PANEL GEï¿½ï¿½ï¿½LERï¿½ (Burasï¿½ deï¿½iï¿½ti) ---
     public void OpenSettings()
     {
-        settingsPanel.SetActive(true);  // Ayarlarý aç
-        mainMenuPanel.SetActive(false); // Ana menüyü kapat (Gizle)
+        settingsPanel.SetActive(true);  // Ayarlarï¿½ aï¿½
+        mainMenuPanel.SetActive(false); // Ana menï¿½yï¿½ kapat (Gizle)
     }
 
     public void CloseSettings()
     {
-        settingsPanel.SetActive(false); // Ayarlarý kapat
-        mainMenuPanel.SetActive(true);  // Ana menüyü geri aç (Göster)
+        settingsPanel.SetActive(false); // Ayarlarï¿½ kapat
+        mainMenuPanel.SetActive(true);  // Ana menï¿½yï¿½ geri aï¿½ (Gï¿½ster)
     }
 
-    // --- OYUN KONTROLLERÝ ---
+    // --- OYUN KONTROLLERï¿½ ---
     public void PlayGame()
     {
         SceneManager.LoadScene("Home");
@@ -41,6 +41,16 @@ public class MainMenuManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Çýkýþ Yapýldý");
+        Debug.Log("ï¿½ï¿½kï¿½ï¿½ Yapï¿½ldï¿½");
+    }
+
+    public void OpenSettings()
+    {
+        settingsPanel.SetActive(true);
+    }
+
+    public void CloseSettings()
+    {
+        settingsPanel.SetActive(false);
     }
 }
